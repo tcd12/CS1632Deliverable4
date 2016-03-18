@@ -1,6 +1,6 @@
 # CS1632Deliverable4
 
-2. Write your own JUnit-based property-based test to check Arrays.sort(int[] arr) method in Java
+2) Write your own JUnit-based property-based test to check Arrays.sort(int[] arr) method in Java
 
 For the JUnit-based property-based tests, generate a minimum of 100 different random arrays of different sizes, and test different properties (many examples were discussed in the lecture on property-based testing) of sorting them. You may use Java's built-in Arrays.sort() method. You should test at least three different properties of each sorted array. You should use traditional JUnit test procedures (e.g., use assertions, don't use System.out.println during normal execution, etc.) Since we are testing a built-in Java method, I don't expect any failures, but who knows, you may be the one to find a bug in Java's own libraries!
 
