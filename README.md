@@ -17,13 +17,7 @@ Every assignment should have a title page with:
 
 The name of the student
 The title "CS 1632 - DELIVERABLE 4"
-The name of the project you worked on - "COMBINATORIAL TESTING" or "PROPERTY-BASED TESTING"
-Grading (Combinatorial Testing)
-
-Summary - 10%
-Screenshot of NIST ACTS (or similar) tool with your system - 20%
-Test Plan - 70%
-Grading (Property-Based Testing)
+The name of the project you worked on - "PROPERTY-BASED TESTING"
 
 Summary - 10%
 Screenshot of completed test - 20%
