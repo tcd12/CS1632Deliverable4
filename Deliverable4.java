@@ -6,20 +6,26 @@ import org.junit.Test;
 public class Deliverable4 {
 	
 	static Random rand = new Random();
+	static int randSize;
 	static int randNum;
 	static ArrayList<int[]> list = new ArrayList<int[]>();
 	
-	//generates random number from 1 to 100,000
-	public static void generateRandNum() {
-		randNum = rand.nextInt(100000) + 1;
+	//generates random number from 0 to 9,999
+	public static void generateRandSize() {
+		randSize = rand.nextInt(10000);
 	}
 	
-	//generates 100 arrays of random length, with random integers as elements
+	//generates random number to fill elements with
+	public static void generateRandNum() {
+		randNum = rand.nextInt();
+	}
+	
+	//generates 100 arrays of random length (from 0 to 9,999), with random integers as elements
 	@BeforeClass
 	public static void generateArrays(){
 		for (int i = 0; i < 100; i++){
-			generateRandNum();
-			int[] a = new int[randNum];
+			generateRandSize();
+			int[] a = new int[randSize];
 			for (int j = 0; j < a.length; j++) {
 				generateRandNum();
 				a[j] = randNum;
@@ -68,22 +74,22 @@ public class Deliverable4 {
 	@Test
 	public void testSameElements() {
 		int[] unsorted;
+		
 		for (int sorted[] : list) {
+			int matchedElements = 0;
 			unsorted = new int[sorted.length];
-			System.arraycopy(sorted, 0, unsorted, 0, sorted.length);
+			System.arraycopy(sorted, 0, unsorted, 0, sorted.length);	//copies unsorted array, then sorts it
 			Arrays.sort(sorted);
-			//change each element in unsorted[] to 0 that matches an element in sorted[]
+			//checks that each element in the sorted array exists in the unsorted array
 			for (int i = 0; i < sorted.length; i++) {
 				for (int j = 0; j < unsorted.length; j++) {
 					if (sorted[i] == unsorted[j]) {
-						sorted[i] = 0;
+						matchedElements++;
 					}
 				}
 			}
-			//test that every element of unsorted[] has matched an element of sorted[] (is 0)
-			for (int i = 0; i < sorted.length; i++) {
-				assertEquals(sorted[i], 0);
-			}
+			
+			assertEquals(matchedElements, sorted.length);	//assert that as many elements as in array matched to element in unsorted array 
 		}
 	}
 	
