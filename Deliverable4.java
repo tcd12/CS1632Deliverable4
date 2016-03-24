@@ -70,13 +70,13 @@ public class Deliverable4 {
 		}
 	}
 	
-	//tests that each element in unsorted array is still in sorted array
+	//tests that each value in unsorted array is still in sorted array
 	@Test
-	public void testSameElements() {
+	public void testSameValues() {
 		int[] unsorted;
 		
 		for (int sorted[] : list) {
-			int matchedElements = 0;
+			int matchedValues = 0;
 			unsorted = new int[sorted.length];
 			System.arraycopy(sorted, 0, unsorted, 0, sorted.length);	//copies unsorted array, then sorts it
 			Arrays.sort(sorted);
@@ -84,12 +84,12 @@ public class Deliverable4 {
 			for (int i = 0; i < sorted.length; i++) {
 				for (int j = 0; j < unsorted.length; j++) {
 					if (sorted[i] == unsorted[j]) {
-						matchedElements++;
+						matchedValues++;
 					}
 				}
 			}
 			
-			assertEquals(matchedElements, sorted.length);	//assert that as many elements as in array matched to element in unsorted array 
+			assertEquals(matchedValues, sorted.length);	//assert that as many elements as in array matched to element in unsorted array 
 		}
 	}
 	
